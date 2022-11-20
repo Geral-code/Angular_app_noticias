@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormulariosComponent implements OnInit {
 
+  categorias: any[] = [
+    { value: 'general', nombre: 'General'},
+    { value: 'business', nombre: 'Negocios'},
+  ];
+  
+  paises: any[] = [
+    { value: 'ar', nombre: 'Argentina'},
+    { value: 'br', nombre: 'Brasil'},
+  ];
   constructor() { }
 
   ngOnInit(): void {

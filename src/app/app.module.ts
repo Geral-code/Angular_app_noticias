@@ -1,6 +1,9 @@
+//Modulos
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
+//Componentes
 import { AppComponent } from './app.component';
 import { FormulariosComponent } from './components/formularios/formularios.component';
 import { ListadoNoticiasComponent } from './components/listado-noticias/listado-noticias.component';
@@ -13,10 +16,12 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     FormulariosComponent,
     ListadoNoticiasComponent,
     NavbarComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

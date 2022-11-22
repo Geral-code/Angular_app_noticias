@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -33,11 +34,12 @@ export class FormulariosComponent implements OnInit {
     { value: 'gb', nombre: 'Reino Unido'},
   ];
 
-  buscarNoticia(){
-    const PARAMETROS = {
+  buscarNoticias(){
+    const parametros = {
       categoria: this.categoriaSeleccionada,
       pais: this.paisSeleccionado
     }
+    this.parametrosSeleccionados.emit(parametros)
   }
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-formularios',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formularios.component.css']
 })
 export class FormulariosComponent implements OnInit {
+
+  @Output() parametrosSeleccionados = new EventEmitter<any>()
+  
 
   categoriaSeleccionada = 'general';
   paisSeleccionado = 'ar';
@@ -31,8 +34,10 @@ export class FormulariosComponent implements OnInit {
   ];
 
   buscarNoticia(){
-    console.log(this.categoriaSeleccionada);
-    console.log(this.paisSeleccionado)
+    const PARAMETROS = {
+      categoria: this.categoriaSeleccionada,
+      pais: this.paisSeleccionado
+    }
   }
 
 

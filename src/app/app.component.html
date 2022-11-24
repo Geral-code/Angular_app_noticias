@@ -2,5 +2,6 @@
 <div class="container">
   <app-formularios (parametrosSeleccionados)="buscarNoticias($event)" ></app-formularios>
   <app-listado-noticias [listNoticias]="listNoticias" ></app-listado-noticias>
+  <app-spinner *ngIf="loading"></app-spinner>
   
 </div>

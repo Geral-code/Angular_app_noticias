@@ -7,20 +7,32 @@ import { NoticiaService } from './services/noticia.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  listNoticias: any[] = [];
+ listNoticias: any[] = [];
+ loading = false;
   
  constructor(private _noticiaService: NoticiaService) {
 
  }
 
   buscarNoticias(parametros: any) {
-    console.log('soy el padre'), 
-    console.log(parametros);
+    this.loading = true;
+    this.listNoticias = [];
 
-    this._noticiaService.getNoticias(parametros).subscribe(data => {
-      console.log(data);
-      this.listNoticias = data.articles
-    })
+    setTimeout(() => {
+      
+      this._noticiaService.getNoticias(parametros).subscribe(data => {
+        this.loading = false;
+        console.log(data);
+        this.listNoticias = data.articles;
+      }, error => {
+        console.log(error);
+        this.loading = false;
+      })
+
+
+    }, 1000);
+   
+    
+    
   }
 }
